@@ -1,7 +1,6 @@
-
 language: swift
 osx_image: xcode11.3
-xcode_project: ImageGalleryApp.xcworkspace
+xcode_workspace: ImageGalleryApp.xcworkspace
 xcode_scheme: ImageGalleryApp
 xcode_destination: platform=iOS Simulator,OS=13.3,name=iPhone 8
 before_install:
