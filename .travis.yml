@@ -6,4 +6,4 @@ xcode_destination: platform=iOS Simulator,OS=13.3,name=iPhone 8
 before_install:
   - pod install
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -X xcodellvm
+  - bash <(curl -s https://codecov.io/bash) -t c50c028f-9fcf-45d9-8dc4-931410f1da6e
