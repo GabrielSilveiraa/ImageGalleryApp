@@ -10,10 +10,10 @@ import Foundation
 import GMSNetworkLayer
 
 final class ImageGalleryService {
-    let networkManager: NetworkManager
+    let networkManager: NetworkManagerProtocol
     
-    init(session: URLSession = .shared) {
-        networkManager = NetworkManager(session: session)
+    init(networkManager: NetworkManagerProtocol = NetworkManager(session: .shared)) {
+        self.networkManager = networkManager
     }
 }
 
