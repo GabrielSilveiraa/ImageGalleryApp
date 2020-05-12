@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,8 +16,14 @@
 		A68DDC502469B82E00C6C68A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68DDC4E2469B82E00C6C68A /* Main.storyboard */; };
 		A68DDC522469B82E00C6C68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A68DDC512469B82E00C6C68A /* Assets.xcassets */; };
 		A68DDC552469B82E00C6C68A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68DDC532469B82E00C6C68A /* LaunchScreen.storyboard */; };
-		A68DDC602469B82F00C6C68A /* ImageGalleryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68DDC5F2469B82F00C6C68A /* ImageGalleryAppTests.swift */; };
 		A68DDC6B2469B82F00C6C68A /* ImageGalleryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68DDC6A2469B82F00C6C68A /* ImageGalleryAppUITests.swift */; };
+		A6C05CD12469EEBB003BDD68 /* ImageGalleryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C05CD02469EEBB003BDD68 /* ImageGalleryApi.swift */; };
+		A6C05CD42469F67F003BDD68 /* ImageGalleryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C05CD32469F67F003BDD68 /* ImageGalleryService.swift */; };
+		A6C05CD72469FD87003BDD68 /* ImageGalleryPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C05CD62469FD87003BDD68 /* ImageGalleryPhotos.swift */; };
+		A6C05CD9246A0230003BDD68 /* ImageGallerySizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C05CD8246A0230003BDD68 /* ImageGallerySizes.swift */; };
+		A6C05CDC246A18AA003BDD68 /* ImagesSizeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C05CDB246A18AA003BDD68 /* ImagesSizeResponse.json */; };
+		A6C05CDF246A1925003BDD68 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C05CDE246A1925003BDD68 /* ServiceTests.swift */; };
+		A6C05CE2246A198C003BDD68 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C05CE1246A198C003BDD68 /* XCTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +60,17 @@
 		A68DDC542469B82E00C6C68A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A68DDC562469B82E00C6C68A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68DDC5B2469B82F00C6C68A /* ImageGalleryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageGalleryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68DDC5F2469B82F00C6C68A /* ImageGalleryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryAppTests.swift; sourceTree = "<group>"; };
 		A68DDC612469B82F00C6C68A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A68DDC662469B82F00C6C68A /* ImageGalleryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageGalleryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68DDC6A2469B82F00C6C68A /* ImageGalleryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryAppUITests.swift; sourceTree = "<group>"; };
 		A68DDC6C2469B82F00C6C68A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6C05CD02469EEBB003BDD68 /* ImageGalleryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryApi.swift; sourceTree = "<group>"; };
+		A6C05CD32469F67F003BDD68 /* ImageGalleryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryService.swift; sourceTree = "<group>"; };
+		A6C05CD62469FD87003BDD68 /* ImageGalleryPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryPhotos.swift; sourceTree = "<group>"; };
+		A6C05CD8246A0230003BDD68 /* ImageGallerySizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGallerySizes.swift; sourceTree = "<group>"; };
+		A6C05CDB246A18AA003BDD68 /* ImagesSizeResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ImagesSizeResponse.json; sourceTree = "<group>"; };
+		A6C05CDE246A1925003BDD68 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		A6C05CE1246A198C003BDD68 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		AF3F32D30C9ECE0A20C3CCE8 /* Pods-ImageGalleryApp-ImageGalleryAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGalleryApp-ImageGalleryAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageGalleryApp-ImageGalleryAppTests/Pods-ImageGalleryApp-ImageGalleryAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF326FB8A3310B982F6F8372 /* Pods-ImageGalleryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGalleryApp.release.xcconfig"; path = "Target Support Files/Pods-ImageGalleryApp/Pods-ImageGalleryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +113,6 @@
 				2CA7427393B2412A6D451B0E /* Pods-ImageGalleryApp-ImageGalleryAppUITests.debug.xcconfig */,
 				0B14E2ACAE4E8D994B09791D /* Pods-ImageGalleryApp-ImageGalleryAppUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,6 +141,8 @@
 		A68DDC472469B82E00C6C68A /* ImageGalleryApp */ = {
 			isa = PBXGroup;
 			children = (
+				A6C05CD52469FC43003BDD68 /* Models */,
+				A6C05CCF2469EE99003BDD68 /* Service */,
 				A68DDC482469B82E00C6C68A /* AppDelegate.swift */,
 				A68DDC4A2469B82E00C6C68A /* SceneDelegate.swift */,
 				A68DDC4C2469B82E00C6C68A /* ViewController.swift */,
@@ -144,7 +157,9 @@
 		A68DDC5E2469B82F00C6C68A /* ImageGalleryAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				A68DDC5F2469B82F00C6C68A /* ImageGalleryAppTests.swift */,
+				A6C05CE0246A197A003BDD68 /* Extensions */,
+				A6C05CDA246A1878003BDD68 /* ResponseMocks */,
+				A6C05CE3246A1A97003BDD68 /* Tests */,
 				A68DDC612469B82F00C6C68A /* Info.plist */,
 			);
 			path = ImageGalleryAppTests;
@@ -157,6 +172,56 @@
 				A68DDC6C2469B82F00C6C68A /* Info.plist */,
 			);
 			path = ImageGalleryAppUITests;
+			sourceTree = "<group>";
+		};
+		A6C05CCF2469EE99003BDD68 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A6C05CD02469EEBB003BDD68 /* ImageGalleryApi.swift */,
+				A6C05CD32469F67F003BDD68 /* ImageGalleryService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A6C05CD52469FC43003BDD68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6C05CD62469FD87003BDD68 /* ImageGalleryPhotos.swift */,
+				A6C05CD8246A0230003BDD68 /* ImageGallerySizes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6C05CDA246A1878003BDD68 /* ResponseMocks */ = {
+			isa = PBXGroup;
+			children = (
+				A6C05CDB246A18AA003BDD68 /* ImagesSizeResponse.json */,
+			);
+			path = ResponseMocks;
+			sourceTree = "<group>";
+		};
+		A6C05CDD246A18E5003BDD68 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A6C05CDE246A1925003BDD68 /* ServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A6C05CE0246A197A003BDD68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A6C05CE1246A198C003BDD68 /* XCTestCase.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A6C05CE3246A1A97003BDD68 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A6C05CDD246A18E5003BDD68 /* Services */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		F52C7B82354A1DF77B1B3F6F /* Frameworks */ = {
@@ -246,6 +311,7 @@
 					};
 					A68DDC5A2469B82F00C6C68A = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = A68DDC442469B82E00C6C68A;
 					};
 					A68DDC652469B82F00C6C68A = {
@@ -289,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C05CDC246A18AA003BDD68 /* ImagesSizeResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,8 +494,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68DDC4D2469B82E00C6C68A /* ViewController.swift in Sources */,
+				A6C05CD12469EEBB003BDD68 /* ImageGalleryApi.swift in Sources */,
 				A68DDC492469B82E00C6C68A /* AppDelegate.swift in Sources */,
+				A6C05CD42469F67F003BDD68 /* ImageGalleryService.swift in Sources */,
 				A68DDC4B2469B82E00C6C68A /* SceneDelegate.swift in Sources */,
+				A6C05CD9246A0230003BDD68 /* ImageGallerySizes.swift in Sources */,
+				A6C05CD72469FD87003BDD68 /* ImageGalleryPhotos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +507,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A68DDC602469B82F00C6C68A /* ImageGalleryAppTests.swift in Sources */,
+				A6C05CE2246A198C003BDD68 /* XCTestCase.swift in Sources */,
+				A6C05CDF246A1925003BDD68 /* ServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,14 +674,17 @@
 			baseConfigurationReference = 1C31EED53FB6A8C31F9A6CCC /* Pods-ImageGalleryApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T73BD28QQL;
 				INFOPLIST_FILE = ImageGalleryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielSilveira.ImageGalleryApp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.GabrielSilveira.ImageGalleryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -620,14 +695,17 @@
 			baseConfigurationReference = CF326FB8A3310B982F6F8372 /* Pods-ImageGalleryApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T73BD28QQL;
 				INFOPLIST_FILE = ImageGalleryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielSilveira.ImageGalleryApp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.GabrielSilveira.ImageGalleryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -639,7 +717,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T73BD28QQL;
 				INFOPLIST_FILE = ImageGalleryAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -649,6 +730,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielSilveira.ImageGalleryAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageGalleryApp.app/ImageGalleryApp";
@@ -661,7 +743,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T73BD28QQL;
 				INFOPLIST_FILE = ImageGalleryAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -682,7 +767,9 @@
 			baseConfigurationReference = 2CA7427393B2412A6D451B0E /* Pods-ImageGalleryApp-ImageGalleryAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T73BD28QQL;
 				INFOPLIST_FILE = ImageGalleryAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -702,7 +789,9 @@
 			baseConfigurationReference = 0B14E2ACAE4E8D994B09791D /* Pods-ImageGalleryApp-ImageGalleryAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T73BD28QQL;
 				INFOPLIST_FILE = ImageGalleryAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

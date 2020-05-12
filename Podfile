@@ -12,6 +12,7 @@ target 'ImageGalleryApp' do
   target 'ImageGalleryAppTests' do
     pod 'RxBlocking', '~> 5'
     pod 'RxTest', '~> 5'
+    pod 'GMSNetworkLayer', '>= 1.1.2'
   end
 
   target 'ImageGalleryAppUITests' do
