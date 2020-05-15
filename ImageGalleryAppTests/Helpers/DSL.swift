@@ -2,17 +2,17 @@ import Quick
 import Nimble
 
 func given(_ description: String, flags: FilterFlags = [:], closure: @escaping () -> Void) {
-    context(description, flags: flags, closure: closure)
+    context("Given " + description, flags: flags, closure: closure)
 }
 
 func when(_ description: String, flags: FilterFlags = [:], closure: @escaping () -> Void) {
-    describe(description, flags: flags, closure: closure)
+    describe("When " + description, flags: flags, closure: closure)
 }
 
 func then(_ description: String, flags: FilterFlags = [:], closure: @escaping () -> Void) {
-    it(description, flags: flags, closure: closure)
+    it("Then " + description, flags: flags, closure: closure)
 }
 
 func and(_ description: String, flags: FilterFlags = [:], closure: @escaping () -> Void) {
-    context(description, flags: flags, closure: closure)
+    context("And " + description, flags: flags, closure: closure)
 }
