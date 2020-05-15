@@ -8,17 +8,20 @@
 
 import UIKit
 import RxSwift
-import RxDataSources
+import RxCocoa
 
 final class ImagesGalleryViewController: ViewCodedViewController<ImagesGalleryView> {
-    
     //MARK: - ViewModel
     private let viewModel: ImagesGalleryViewModel
     private lazy var viewModelOutput: ImagesGalleryViewModel.Output = {
-        let input = ImagesGalleryViewModel.Input.init(viewDidAppear: rx.viewDidAppear.asObservable(),
-                                                      tags: Observable.never())
+        let input = ImagesGalleryViewModel.Input(willDisPlayCell: willDisPlayCell.asObservable(),
+                                                 tag: customView.searchTextField
+                                                        .rx.controlEvent([.editingChanged])
+                                                        .withLatestFrom(customView.searchTextField.rx.text.orEmpty).asObservable())
         return viewModel.transform(input: input)
     }()
+    
+    private let willDisPlayCell: PublishSubject<Int> = PublishSubject()
     
     //MARK: - Disposebag
     private let disposeBag = DisposeBag()
@@ -35,29 +38,55 @@ final class ImagesGalleryViewController: ViewCodedViewController<ImagesGalleryVi
     
     //MARK: - Life cycle
     override func viewDidLoad() {
-      super.viewDidLoad()
-      bindViewModel()
+        super.viewDidLoad()
+        setupBinds()
     }
     
     //MARK: - Private functions
-    private func bindViewModel() {
+    private func setupBinds() {
+        viewModelOutput.images
+        .drive(customView
+                  .collectionView
+                  .rx
+                  .items(cellIdentifier: ImageCollectionViewCell.identifier,
+                         cellType: ImageCollectionViewCell.self)) { row , item, cell in
+                            cell.configure(image: item)
+        }.disposed(by: disposeBag)
         
-//        viewModelOutput.items.bind(to: customView.collectionView.rx.items(cellIdentifier: "",
-//                                                                          cellType: UICollectionViewCell.self)) { _, item, cell in
-////            cell.configureCell(withItem: item)
-//        }
-//        .disposed(by: self.disposeBag)
-//        items(cellIdentifier: "", cellType: UICollectionViewCell.self)) {
-            
-//        }
-//        viewModelOutput.itens.bind(to: customView.collectionView.rx.items) {
-//            
-//        }
-//      let inputs = SayHelloViewModel.Input(name: nameTextField.rx.text.orEmpty.asObservable(),
-//                                           validate: validateButton.rx.tap.asObservable())
-//      let outputs = viewModel.transform(input: inputs)
-//      outputs.greeting
-//        .drive(greetingLabel.rx.text)
-//        .disposed(by: bag)
+        viewModelOutput.title
+        .asObservable()
+        .bind(to: self.rx.title)
+        .disposed(by: disposeBag)
+        
+        customView.collectionView.rx
+        .setDelegate(self)
+        .disposed(by: disposeBag)
+    }
+}
+
+//MARK: - Extension UICollectionViewDelegateFlowLayout
+extension ImagesGalleryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellSize = collectionView.frame.width * 0.45
+        return CGSize(width: cellSize, height: cellSize)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        let collectionViewWidth = collectionView.frame.width
+        let cellSize = collectionViewWidth * 0.45
+        let inset = (collectionViewWidth - 2*cellSize)/3
+        return UIEdgeInsets(top: inset, left: inset, bottom: 0, right: inset)
+    }
+}
+
+extension ImagesGalleryViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        willDisPlayCell.onNext(indexPath.row)
     }
 }

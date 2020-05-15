@@ -19,9 +19,12 @@ final class ImagesGalleryCoordinator {
 
 extension ImagesGalleryCoordinator: Coordinator {
     func start() {
+        let navigationController = UINavigationController()
+        navigationController.setupAppearance()
         let viewModel = ImagesGalleryViewModel()
         let viewController = ImagesGalleryViewController(viewModel: viewModel)
-        window.rootViewController = viewController
+        navigationController.viewControllers = [viewController]
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
 }

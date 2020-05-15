@@ -10,7 +10,7 @@ import Foundation
 import GMSNetworkLayer
 
 enum ImageGalleryApi: EndPointType {
-    case photosList(tags: String, page: Int)
+    case photosList(tags: String, page: Int, itemsCount: Int)
     case photosSize(photoId: String)
     
     private var apiKey: String {
@@ -42,9 +42,10 @@ enum ImageGalleryApi: EndPointType {
                           "nojsoncallback" : "1"]
         
         switch self {
-        case .photosList(let tags, let page):
+        case .photosList(let tags, let page, let itemsCount):
             parameters["method"] = "flickr.photos.search"
             parameters["page"] = page.description
+            parameters["per_page"] = itemsCount.description
             if !tags.isEmpty {
                 parameters["tags"] = tags
             }

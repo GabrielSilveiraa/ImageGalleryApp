@@ -6,4 +6,14 @@
 //  Copyright © 2020 Gabriel Silveira. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UINavigationController {
+    func setupAppearance() {
+        navigationBar.barStyle = .black
+        navigationBar.backgroundColor = .black
+//        navigationBar.barTintColor = .white
+        navigationBar.prefersLargeTitles = true
+        navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+}

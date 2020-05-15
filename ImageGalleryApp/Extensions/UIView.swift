@@ -6,4 +6,11 @@
 //  Copyright © 2020 Gabriel Silveira. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIView {
+    func addSubview(_ subview: UIView, constraints: Bool) {
+        subview.translatesAutoresizingMaskIntoConstraints = !constraints
+        self.addSubview(subview)
+    }
+}

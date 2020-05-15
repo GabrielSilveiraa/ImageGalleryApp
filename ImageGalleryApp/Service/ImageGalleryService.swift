@@ -8,6 +8,12 @@
 
 import Foundation
 import GMSNetworkLayer
+import RxSwift
+
+protocol ImageGalleryServiceProtocol: AnyObject {
+    func getPhotosList(tag: String, page: Int) -> Single<GalleryPhotosResponse>
+    func getPhotosSize(photoId: String) -> Single<ImagesSizeResponse>
+}
 
 final class ImageGalleryService {
     let networkManager: NetworkManagerProtocol
@@ -17,21 +23,38 @@ final class ImageGalleryService {
     }
 }
 
-extension ImageGalleryService {
-    func getPhotosList(tags: [String], page: Int, completion: @escaping (Result<GalleryPhotosResponse, Error>) -> Void) {
-        var tagsString = ""
-        for i in 0..<tags.count {
-            tagsString += tags[i]
-            if i != tags.count - 1 {
-                tagsString += ","
+extension ImageGalleryService: ImageGalleryServiceProtocol {
+    func getPhotosList(tag: String, page: Int) -> Single<GalleryPhotosResponse> {
+        return Single.create { [weak self] (single) -> Disposable in
+            let route = ImageGalleryApi.photosList(tags: tag, page: page, itemsCount: 100)
+            self?.networkManager.request(route) { (result: Result<GalleryPhotosResponse, Error>) in
+                switch result {
+                case .success(let response):
+                    single(.success(response))
+                //    onNext(response)
+                case .failure(let error):
+                    single(.error(error))
+                    //observer.onError(error)
+                }
             }
+            return Disposables.create()
         }
-        let route = ImageGalleryApi.photosList(tags: tagsString, page: page)
-        networkManager.request(route, completion: completion)
     }
     
-    func getPhotosSize(photoId: String, completion: @escaping (Result<ImagesSizeResponse, Error>) -> Void) {
-        let route = ImageGalleryApi.photosSize(photoId: photoId)
-        networkManager.request(route, completion: completion)
+    func getPhotosSize(photoId: String) -> Single<ImagesSizeResponse> {
+        return Single.create { [weak self] (single) -> Disposable in
+            let route = ImageGalleryApi.photosSize(photoId: photoId)
+            self?.networkManager.request(route) { (result: Result<ImagesSizeResponse, Error>) in
+                switch result {
+                case .success(let response):
+                    single(.success(response))
+//                    observer.onNext(response)
+                case .failure(let error):
+                    single(.error(error))
+//                    observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
     }
 }

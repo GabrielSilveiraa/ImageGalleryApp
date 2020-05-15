@@ -8,33 +8,51 @@
 
 import UIKit
 
-//MARK: - Class
 final class ImagesGalleryView: BaseView {
-    //MARK -
+    //MARK: - UI Variables
+    lazy var searchTextField: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.backgroundColor = .white
+        textField.placeholder = "searchPlaceholder".localized
+        textField.layer.cornerRadius = 10
+        textField.accessibilityIdentifier = "Search input text"
+        return textField
+    }()
+    
     let collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-//        collectionView.register
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(ImageCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         collectionView.backgroundColor = .white
+        collectionView.accessibilityIdentifier = "Collection of Images"
         return collectionView
     }()
     
     //MARK: - BaseView functions
     func initialize() {
-        backgroundColor = .white
-        addSubview(collectionView)
+        backgroundColor = .black
+        addSubview(searchTextField, constraints: true)
+        addSubview(collectionView, constraints: true)
     }
     
     func setupConstraints() {
+        setupSearchTextFieldConstraints()
         setupCollectionViewContraints()
     }
     
     //MARK: - Private functions
     private func setupCollectionViewContraints() {
-        collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        collectionView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 10).isActive = true
+    }
+    
+    private func setupSearchTextFieldConstraints() {
+        searchTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        searchTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
     }
 }
