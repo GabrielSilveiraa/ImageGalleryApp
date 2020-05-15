@@ -1,4 +1,4 @@
-module Pods_ImageGalleryApp_ImageGalleryAppUITests {
+framework module Pods_ImageGalleryApp_ImageGalleryAppUITests {
   umbrella header "Pods-ImageGalleryApp-ImageGalleryAppUITests-umbrella.h"
 
   export *
