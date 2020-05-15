@@ -3,7 +3,6 @@ platform :ios, '12.2'
 source = 'https://github.com/GabrielSilveiraa/GMSNetworkLayer'
 
 target 'ImageGalleryApp' do
-  use_frameworks!
   
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
