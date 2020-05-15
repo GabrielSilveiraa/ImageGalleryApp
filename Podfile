@@ -4,15 +4,18 @@ source = 'https://github.com/GabrielSilveiraa/GMSNetworkLayer'
 
 target 'ImageGalleryApp' do
   use_frameworks!
-  
+
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
-  pod 'GMSNetworkLayer', '>= 1.1.2'
+  pod 'RxSwiftExt'
+  pod 'Kingfisher', '~> 5.0'
+  pod 'GMSNetworkLayer', '~> 1.1'
 
   target 'ImageGalleryAppTests' do
-    pod 'RxBlocking', '~> 5'
     pod 'RxTest', '~> 5'
-    pod 'GMSNetworkLayer', '>= 1.1.2'
+    pod 'RxBlocking'
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'ImageGalleryAppUITests' do

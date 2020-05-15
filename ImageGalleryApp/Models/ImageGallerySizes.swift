@@ -12,7 +12,7 @@ import Foundation
 struct ImagesSizeResponse: Decodable {
     let image: Image
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case image = "sizes"
     }
 }
@@ -21,32 +21,34 @@ struct ImagesSizeResponse: Decodable {
 struct Image: Decodable {
     let sizes: [Size]
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case sizes = "size"
     }
 }
 
 // MARK: - Size
-struct Size: Decodable {
+struct Size {
     let label: SizeLabel?
     let width, height: Int
     let source: String
 }
 
-enum SizeLabel: String, Decodable {
-    case largeSquare = "Large Square"
-    case square = "Square"
-    case thumbnail = "Thumbnail"
-    case small = "Small"
-    case small320 = "Small 320"
-    case small400 = "Small 400"
-    case medium = "Medium"
-    case medium640 = "Medium 640"
-    case medium800 = "Medium 800"
-    case large = "Large"
-    case large1600 = "Large 1600"
-    case large2048 = "Large 2048"
-    case xLarge3K = "X-Large 3K"
-    case xLarge4K = "X-Large 4K"
+extension Size: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case label, width, height, source
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let labelString = try container.decode(String.self, forKey: .label)
+        self.label = SizeLabel(rawValue: labelString)
+        self.height = try container.decode(Int.self, forKey: .height)
+        self.width = try container.decode(Int.self, forKey: .width)
+        self.source = try container.decode(String.self, forKey: .source)
+    }
 }
 
+enum SizeLabel: String, Decodable {
+    case largeSquare = "Large Square"
+    case large = "Large"
+}
