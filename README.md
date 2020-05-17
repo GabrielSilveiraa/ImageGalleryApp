@@ -39,7 +39,7 @@ A framework developed by me to facilitate the http networking in Swift.
 
 * [RxSwift](https://github.com/ReactiveX/RxSwift)
 
-### Image downloading anc caching
+### Image downloading and caching
 
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
 
