@@ -1,5 +1,5 @@
 PODS:
-  - GMSNetworkLayer (1.1.2)
+  - GMSNetworkLayer (1.1.3)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
@@ -49,7 +49,7 @@ SPEC REPOS:
     - RxTest
 
 SPEC CHECKSUMS:
-  GMSNetworkLayer: 63aca893a31728a6b5ca5eb700d81f714b24a657
+  GMSNetworkLayer: 0e72d1c2b285f439bf24e7ede18acc7e07f0f312
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   Nimble: 2da33c44adfde49552d4a6b3ef16039a45bf8dca
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
