@@ -33,7 +33,7 @@ Every Scene is developed using the MVVM presentation architecture, along with a 
 
 * [GMSNetworkLayer](https://github.com/GabrielSilveiraa/GMSNetworkLayer)
 
-A framework developed by me to facilitate the http networking in Swift.
+A framework developed by myself to facilitate the http networking in Swift.
 
 ### Reactive Programming
 
